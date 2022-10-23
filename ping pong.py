@@ -9,7 +9,6 @@ wn.setup(width=800, height=600)
 wn.tracer(0)
 
 
-# Side A
 side_a = turtle.Turtle()
 side_a.speed(0) #speed Animation
 side_a.shape("square")
@@ -18,7 +17,6 @@ side_a.penup()
 side_a.goto(-350, 0)
 side_a.shapesize(stretch_wid=5, stretch_len=0.5)
 
-# Side B
 
 side_b = turtle.Turtle()
 side_b.speed(0) #speed Animation
@@ -30,7 +28,6 @@ side_b.shapesize(stretch_wid=5, stretch_len=0.5)
 
 
 
-# Ball
 
 ball = turtle.Turtle()
 ball.speed(0)
@@ -42,7 +39,6 @@ ball.dx = 0.1
 ball.dy = 0.1
 
 
-# score
 score = turtle.Turtle()
 score.speed(0)
 score.shape("square")
@@ -52,7 +48,7 @@ score.hideturtle()
 score.goto(0, 260)
 score.write("0   :   0", align="center", font=("comicsans", 30))
 
-# Function for A
+
 def a_up():
     y = side_a.ycor()
     y += 20
@@ -63,7 +59,7 @@ def a_down():
     y -= 20
     side_a.sety(y)
 
-# Function for B
+
 
 def b_up():
     y = side_b.ycor()
@@ -76,7 +72,7 @@ def b_down():
     side_b.sety(y)
 
 
-# Key board binding
+
 wn.listen()
 wn.onkeypress(a_up, "w")
 wn.onkeypress(a_down, "s")
@@ -84,26 +80,26 @@ wn.onkeypress(b_up, "Up")
 wn.onkeypress(b_down, "Down")
 
 
-# Score
+
 score_a = 0
 score_b = 0
 
-# Main game loop
+
 while True:
     wn.update()
     
-    # Move the ball
+    
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
 
     # Border
     if ball.ycor() > 300:
         ball.sety(300)
-        ball.dy *= -1     # for opposite side
+        ball.dy *= -1     
 
     if ball.ycor() < -300:
         ball.sety(-300)
-        ball.dy *= -1     # # for opposite side
+        ball.dy *= -1    
 
     if ball.xcor() > 400:
         ball.goto(0,0)
