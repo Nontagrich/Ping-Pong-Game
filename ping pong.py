@@ -1,7 +1,6 @@
 import turtle
 import os
 
-
 wn = turtle.Screen()
 wn.title("Ping Pong Game!!")
 wn.bgcolor("black")
